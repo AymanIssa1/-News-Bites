@@ -1,0 +1,14 @@
+package com.backingapp.ayman.newsbites;
+
+/**
+ * Created by Ayman on 3/2/2018.
+ */
+
+public class Constants {
+
+    public static final String LIST_STATE_EXTRA = "list-state-extra";
+    public static final String ARTICLES_LIST_EXTRA = "articles_list_extra";
+
+    public static final String SEARCH_FRAGMENT_TAG = "search-fragment-tag";
+
+}

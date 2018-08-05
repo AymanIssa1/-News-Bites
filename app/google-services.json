@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "536192384026",
+    "firebase_url": "https://newsbites-d0f9d.firebaseio.com",
+    "project_id": "newsbites-d0f9d",
+    "storage_bucket": "newsbites-d0f9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536192384026:android:c5da676824d81ddd",
+        "android_client_info": {
+          "package_name": "com.backingapp.ayman.newsbites"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536192384026-sdblt1tl9i7orun1eqotkjup2ff7occv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAGE99-AUPjqVHYWqIoKbD8hEHWPMDKzc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
