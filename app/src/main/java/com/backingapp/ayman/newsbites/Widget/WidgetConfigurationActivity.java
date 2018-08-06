@@ -36,7 +36,7 @@ public class WidgetConfigurationActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading ...");
+        progressDialog.setMessage(getString(R.string.loading_progress_dialog));
         progressDialog.setCancelable(false);
 
         // Find the widget id from the intent.

@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NewsFragment.OnFr
                 searchResultsFragment = SearchResultsFragment.newInstance(currentQuery);
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ft.add(R.id.contentLayout, searchResultsFragment, Constants.SEARCH_FRAGMENT_TAG);
-//                ft.addToBackStack(Constants.SEARCH_FRAGMENT_TAG);
+                ft.addToBackStack(Constants.SEARCH_FRAGMENT_TAG);
                 ft.commit();
             }
         });
@@ -168,12 +168,18 @@ public class MainActivity extends AppCompatActivity implements NewsFragment.OnFr
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(Constants.VIEW_PAGER_POSITION, tabs.getSelectedTabPosition());
+        outState.putInt(Constants.SEARCH_LAYOUT_VISIBILITY, contentLayout.getVisibility());
+        outState.putInt(Constants.VIEW_PAGER_VISIBILITY, viewPager.getVisibility());
+        outState.putInt(Constants.TABS_VISIBILITY, tabs.getVisibility());
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         viewPager.setCurrentItem(savedInstanceState.getInt(Constants.VIEW_PAGER_POSITION));
+        contentLayout.setVisibility(savedInstanceState.getInt(Constants.SEARCH_LAYOUT_VISIBILITY));
+        viewPager.setVisibility(savedInstanceState.getInt(Constants.VIEW_PAGER_VISIBILITY));
+        tabs.setVisibility(savedInstanceState.getInt(Constants.TABS_VISIBILITY));
     }
 
     @Override

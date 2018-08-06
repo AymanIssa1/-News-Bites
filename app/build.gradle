@@ -9,7 +9,7 @@ android {
         config {
             keyAlias 'NewsBites'
             keyPassword '0123456'
-            storeFile file('C:/Users/Ayman/AndroidStudioProjects/NewsBites/key.jks')
+            storeFile file("$rootDir/key.jks")
             storePassword '0123456'
         }
     }
@@ -28,6 +28,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
@@ -73,14 +74,10 @@ dependencies {
     implementation 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.1.1'
 
     // to dispose rxbinding when activity lifecycle ends
-
-    //    implementation 'com.uber.autodispose:autodispose:0.8.0'
-
-    //    implementation 'com.uber.autodispose:autodispose-android:0.8.0'
-
-    //    implementation 'com.uber.autodispose:autodispose-rxlifecycle:0.8.0'
-
-    //    implementation 'com.uber.autodispose:autodispose-android-archcomponents:0.8.0'
+//    implementation 'com.uber.autodispose:autodispose:0.8.0'
+//    implementation 'com.uber.autodispose:autodispose-android:0.8.0'
+//    implementation 'com.uber.autodispose:autodispose-rxlifecycle:0.8.0'
+//    implementation 'com.uber.autodispose:autodispose-android-archcomponents:0.8.0'
 
     // to load images
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -92,8 +89,8 @@ dependencies {
     implementation 'com.github.iammert:StatusView:1.4'
 
     //to monitor http requests through google chrome... url chrome://inspect/
-    debugImplementation 'com.facebook.stetho:stetho:1.5.0'
-    debugImplementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     // Uber NullAway - to find code error on compile
     annotationProcessor "com.uber.nullaway:nullaway:0.5.1"

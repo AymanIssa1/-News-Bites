@@ -26,7 +26,7 @@ public class Utils {
                     return networkCountry.toLowerCase(Locale.US);
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return null;
     }

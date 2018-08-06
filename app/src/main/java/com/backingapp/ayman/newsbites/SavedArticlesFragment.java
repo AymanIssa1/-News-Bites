@@ -85,7 +85,7 @@ public class SavedArticlesFragment extends Fragment implements Observer<List<Art
         if (savedArticlesViewModel == null)
             getNews();
         else // on rotate
-            getActivity().runOnUiThread(() -> setRecyclerView());
+            getActivity().runOnUiThread(this::setRecyclerView);
 
         return rootView;
     }
@@ -173,7 +173,7 @@ public class SavedArticlesFragment extends Fragment implements Observer<List<Art
     @Override
     public void onChanged(@Nullable List<Article> articles) {
         articleList = articles;
-        getActivity().runOnUiThread(() -> setRecyclerView());
+        getActivity().runOnUiThread(this::setRecyclerView);
         noSavedArticlesFoundTextView.setVisibility(articles.size() != 0 ? View.INVISIBLE : View.VISIBLE);
     }
 
@@ -190,7 +190,7 @@ public class SavedArticlesFragment extends Fragment implements Observer<List<Art
 
     @Override
     public void deleteArticle(Article article) {
-        Toast.makeText(getContext(), "Article Deleted.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), R.string.article_deleted, Toast.LENGTH_SHORT).show();
         AppExecutors.getInstance().diskIO().execute(() -> AppDatabase.getInstance(getContext()).articlesDao().deleteArticle(article.articleId));
     }
 

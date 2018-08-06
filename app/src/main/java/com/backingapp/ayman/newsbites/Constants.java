@@ -13,5 +13,9 @@ public class Constants {
 
     public static final String VIEW_PAGER_POSITION = "view-pager-position";
 
+    public static final String SEARCH_LAYOUT_VISIBILITY = "search-layout-visibility";
+    public static final String VIEW_PAGER_VISIBILITY = "view-pager-visibility";
+    public static final String TABS_VISIBILITY = "tabs-visibility";
+
 
 }

@@ -12,6 +12,7 @@
         android:layout_height="56dp"
         android:layout_margin="4dp"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/article_image"
         android:src="@drawable/placeholder" />
 
 

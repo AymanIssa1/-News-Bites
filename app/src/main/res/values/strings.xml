@@ -15,5 +15,10 @@
     <string name="download">Download</string>
     <string name="delete">Delete</string>
     <string name="choose_news_category">Choose news category:</string>
+    <string name="loading">loading</string>
+    <string name="article_image">Article Image</string>
+    <string name="article_deleted">Article Deleted.</string>
+    <string name="article_saved">Article Saved.</string>
+    <string name="loading_progress_dialog">Loading…</string>
 
 </resources>

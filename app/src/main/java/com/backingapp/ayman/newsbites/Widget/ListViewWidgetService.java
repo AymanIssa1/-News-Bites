@@ -7,6 +7,7 @@ import android.widget.RemoteViewsService;
 
 import com.backingapp.ayman.newsbites.Models.Article;
 import com.backingapp.ayman.newsbites.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ class ListViewRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     private List<Article> articles;
     private int appWidgetId;
 
-    public ListViewRemoteViewsFactory(Context mContext) {
+    ListViewRemoteViewsFactory(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -59,6 +60,15 @@ class ListViewRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
 
         remoteViews.setTextViewText(R.id.newsTitleTextView, article.getTitle());
         remoteViews.setTextViewText(R.id.newsSourceTextView, article.getSource().getName());
+
+        try {
+            Picasso.get()
+                    .load(article.getUrlToImage())
+                    .placeholder(R.drawable.placeholder)
+                    .into(remoteViews, R.id.newsImageView, new int[]{appWidgetId});
+        } catch (Exception ignored) {
+        }
+
 
         return remoteViews;
     }

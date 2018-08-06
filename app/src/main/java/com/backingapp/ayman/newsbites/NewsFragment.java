@@ -220,7 +220,7 @@ public class NewsFragment extends Fragment implements NewsAdapterInterface, Conn
 
     @Override
     public void saveArticle(Article article) {
-        Toast.makeText(getContext(), "Article Saved.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), R.string.article_saved, Toast.LENGTH_SHORT).show();
         AppExecutors.getInstance().diskIO().execute(() -> AppDatabase.getInstance(getContext()).articlesDao().insertArticle(article));
     }
 
