@@ -11,4 +11,7 @@ public class Constants {
 
     public static final String SEARCH_FRAGMENT_TAG = "search-fragment-tag";
 
+    public static final String VIEW_PAGER_POSITION = "view-pager-position";
+
+
 }

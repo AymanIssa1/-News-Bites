@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NewsFragment.OnFr
 
     SearchResultsFragment searchResultsFragment;
 
-    private boolean isMoveToHeadLines = false;
+    private static boolean isMoveToHeadLines = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NewsFragment.OnFr
                 searchResultsFragment = SearchResultsFragment.newInstance(currentQuery);
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ft.add(R.id.contentLayout, searchResultsFragment, Constants.SEARCH_FRAGMENT_TAG);
-                ft.addToBackStack(Constants.SEARCH_FRAGMENT_TAG);
+//                ft.addToBackStack(Constants.SEARCH_FRAGMENT_TAG);
                 ft.commit();
             }
         });
@@ -165,8 +165,20 @@ public class MainActivity extends AppCompatActivity implements NewsFragment.OnFr
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(Constants.VIEW_PAGER_POSITION, tabs.getSelectedTabPosition());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        viewPager.setCurrentItem(savedInstanceState.getInt(Constants.VIEW_PAGER_POSITION));
+    }
+
+    @Override
     public void onConnectionChange(ConnectivityEvent event) {
-        if (event.getState().getValue() == ConnectivityState.CONNECTED) {
+        if (event.getState() == ConnectivityState.CONNECTED) {
             // device has active internet connection
             statusView.setStatus(Status.COMPLETE);
         } else {

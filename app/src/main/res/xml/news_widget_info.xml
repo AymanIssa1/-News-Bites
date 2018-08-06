@@ -2,6 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialKeyguardLayout="@layout/news_widget"
     android:initialLayout="@layout/news_widget"
+    android:configure="com.backingapp.ayman.newsbites.Widget.WidgetConfigurationActivity"
     android:minHeight="180dp"
     android:minWidth="250dp"
     android:previewImage="@drawable/example_appwidget_preview"

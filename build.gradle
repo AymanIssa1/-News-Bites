@@ -10,6 +10,11 @@ buildscript {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
+
+        // Crashlytics
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.3'
@@ -19,7 +24,10 @@ buildscript {
         // Uber NullAway
         classpath "net.ltgt.gradle:gradle-errorprone-plugin:0.0.13"
         classpath "net.ltgt.gradle:gradle-apt-plugin:0.13"
-        
+
+        // Crashlytics
+        classpath 'io.fabric.tools:gradle:1.25.4'
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -30,6 +38,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+        }
     }
 }
 

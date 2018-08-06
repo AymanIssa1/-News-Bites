@@ -13,7 +13,7 @@ public class SourceTypeConvertor {
 
     @TypeConverter
     public static Source toSource(String sourceString) {
-        String[] sourceDetails = sourceString.split(",");
+        @SuppressWarnings("StringSplitter") String[] sourceDetails = sourceString.split(",");
         return new Source(sourceDetails[0], sourceDetails[1]);
     }
 

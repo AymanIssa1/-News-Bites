@@ -21,7 +21,6 @@ import com.backingapp.ayman.newsbites.Interfaces.NewsInterface;
 import com.backingapp.ayman.newsbites.Interfaces.SaveArticleInterface;
 import com.backingapp.ayman.newsbites.Models.Article;
 import com.backingapp.ayman.newsbites.Models.Category;
-import com.backingapp.ayman.newsbites.Widget.WidgetIntentService;
 import com.ethanhua.skeleton.RecyclerViewSkeletonScreen;
 import com.ethanhua.skeleton.Skeleton;
 import com.thefinestartist.finestwebview.FinestWebView;
@@ -146,10 +145,6 @@ public class NewsFragment extends Fragment implements NewsAdapterInterface, Conn
             public void done(List<Article> articles) {
                 articleList = articles;
                 getActivity().runOnUiThread(() -> setRecyclerView());
-
-                // create widget
-                if (category == Category.Headlines)
-                    WidgetIntentService.startWidgetService(getContext(), articleList);
             }
 
             @Override
@@ -214,7 +209,7 @@ public class NewsFragment extends Fragment implements NewsAdapterInterface, Conn
 
     @Override
     public void onConnectionChange(ConnectivityEvent event) {
-        if (event.getState().getValue() == ConnectivityState.CONNECTED) {
+        if (event.getState() == ConnectivityState.CONNECTED) {
             // device has active internet connection
             if (articleList == null)
                 getNews();

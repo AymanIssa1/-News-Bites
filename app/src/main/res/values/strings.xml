@@ -12,5 +12,8 @@
     <string name="no_saved_articles_found">No saved articles found</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="download">Download</string>
+    <string name="delete">Delete</string>
+    <string name="choose_news_category">Choose news category:</string>
 
 </resources>

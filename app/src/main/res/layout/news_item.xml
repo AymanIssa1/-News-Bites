@@ -14,11 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
+        tools:ignore="ContentDescription"
         android:src="@drawable/placeholder" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:ignore="ContentDescription"
         android:src="@drawable/photo_background_protection" />
 
     <LinearLayout
@@ -47,12 +49,14 @@
                 android:id="@+id/downloadButton"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:contentDescription="@string/download"
                 android:src="@drawable/ic_file_download_black_24dp" />
 
             <ImageView
                 android:id="@+id/deleteButton"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:contentDescription="@string/delete"
                 android:src="@drawable/ic_delete_black_24dp" />
 
         </LinearLayout>

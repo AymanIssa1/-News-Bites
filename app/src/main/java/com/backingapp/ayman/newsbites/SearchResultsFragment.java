@@ -218,7 +218,7 @@ public class SearchResultsFragment extends Fragment implements NewsAdapterInterf
 
     @Override
     public void onConnectionChange(ConnectivityEvent event) {
-        if (event.getState().getValue() == ConnectivityState.CONNECTED) {
+        if (event.getState() == ConnectivityState.CONNECTED) {
             // device has active internet connection
             if (articleList == null)
                 getNews();

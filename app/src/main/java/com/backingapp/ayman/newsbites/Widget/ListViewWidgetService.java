@@ -57,32 +57,8 @@ class ListViewRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
 
         Article article = articles.get(position);
 
-//        Picasso.get()
-//                .load(article.getUrlToImage())
-//                .into(remoteViews, R.id.newsImageView, new int[]{appWidgetId});
-//
         remoteViews.setTextViewText(R.id.newsTitleTextView, article.getTitle());
         remoteViews.setTextViewText(R.id.newsSourceTextView, article.getSource().getName());
-
-//        Picasso.get()
-//                .load(article.getUrlToImage())
-//                .placeholder(R.drawable.placeholder)
-//                .into(new Target() {
-//                    @Override
-//                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-//                        remoteViews.setImageViewBitmap(R.id.newsImageView, bitmap);
-//                    }
-//
-//                    @Override
-//                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-//                        remoteViews.setImageViewResource(R.id.newsImageView, R.drawable.placeholder);
-//                    }
-//
-//                    @Override
-//                    public void onPrepareLoad(Drawable placeHolderDrawable) {
-//
-//                    }
-//                });
 
         return remoteViews;
     }
